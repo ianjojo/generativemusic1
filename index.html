@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="https://cdn.rawgit.com/mohayonao/web-audio-api-shim/master/build/web-audio-api-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.js"
+      integrity="sha512-+tu0+vUXyZX+S51npa//IN6znNTLZsBoy8mXn9WzHxfBqYMy6gOzzfTK0VqZf9O171RY9AJviHDokCnvEq8+1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.js"
+      integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <div class="blurb">
+      <h1>Computer Music Experiment #1</h1>
+      <p>
+        Inspired by Brian Eno works like Music For Airports, I've begun
+        experimenting with
+        <span class="text-gradient">getting the computer to choose </span>when
+        to play notes. Using the E minor scale, each note is played at a random time between two
+        specified integers. Moving your mouse towards the right of the image
+        adds reverb while moving to the left cleans things up. Each time you refresh the page, you will hear a new performance, unique to you in this moment alone.<br>
+        <br>Written in
+        JavaScript with help from the p5.js library for shape generation. 
+        <br>
+        <br>My
+        progress on this would not be possible without the wonderful article by
+        Tero Parviainen, entitled
+      
+          <a class=""
+            href="https://teropa.info/blog/2016/07/28/javascript-systems-music.html"
+            >JavaScript Systems Music</a
+          ></span
+        >.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+  <style>
+    .text-gradient {
+      background: linear-gradient(to right, #30cfd0, #c43ad6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blurb {
+      width: 400px;
+      margin: 0 auto;
+    }
+    body {
+      background: #3d3d3d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a {
+      color: rgb(230, 230, 230);
+      cursor: pointer;
+    }
+    h1 {
+      line-height: 40px;
+      text-align: left;
+      position: absolute;
+      top: 0;
+      left: 1%;
+      font-family: "Karla";
+      font-size: 50px;
+      width: 350px;
+      color: rgb(230, 230, 230);
+      text-shadow: 0 0 80px rgb(192 219 255 / 75%),
+        0 0 32px rgb(65 120 255 / 24%);
+    }
+    p {
+      position: absolute;
+      top: 30%;
+      left: 1%;
+      width: 350px;
+      color: rgb(230, 230, 230);
+      font-family: "Inconsolata";
+    }
+    canvas {
+      padding: none;
+
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 60px;
+      background: linear-gradient(145deg, #414141, #373737);
+      box-shadow: 27px 27px 54px #2c2c2c, -27px -27px 54px #4e4e4e;
+      color: rgb(var(--text-color));
+      border: 2px double transparent;
+      background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)),
+        radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    }
+  </style>
+</html>
