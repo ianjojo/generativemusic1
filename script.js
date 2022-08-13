@@ -14,8 +14,8 @@ let g;
 let gsharp;
 function preload() {
   a = loadSound("/piano/piano-A4.mp3");
-  voiceE = loadSound("/chorus/chorus-male-e3-PB-loop.wav");
-  voiceFsharp = loadSound("/chorus/chorus-male-fsharp3-PB-loop.wav");
+  // voiceE = loadSound("/chorus/chorus-male-e3-PB-loop.wav");
+  // voiceFsharp = loadSound("/chorus/chorus-male-fsharp3-PB-loop.wav");
   b = loadSound("/piano/piano-B4.mp3");
   c = loadSound("/piano/piano-C4.mp3");
   // csharp = loadSound("piano/piano-C#4.mp3");
@@ -35,12 +35,12 @@ var particles = new Array(binCount);
 function setup() {
   createCanvas(400, 400);
   setInterval(playE, Math.floor(Math.random() * 24000));
-  setInterval(voiceE, Math.floor(Math.random() * 19000));
+
   setInterval(playA, Math.floor(Math.random() * 14000));
   setInterval(playC, Math.floor(Math.random() * 72000));
   setInterval(playB, Math.floor(Math.random() * 19000));
   setInterval(playD, Math.floor(Math.random() * 16000));
-  setInterval(voiceFsharp, Math.floor(Math.random() * 19000));
+
   setInterval(playFsharp, Math.floor(Math.random() * 18000));
   setInterval(playG, 20000);
   setInterval(playG, 20000);
@@ -48,8 +48,6 @@ function setup() {
   reverb.process(a, 50, 4);
   reverb.process(b, 50, 4);
   reverb.process(e, 50, 4);
-  reverb.process(voiceE, 50, 4);
-  reverb.process(voiceFsharp, 50, 4);
   reverb.process(c, 50, 4);
   reverb.process(d, 50, 4);
   reverb.process(fsharp, 50, 4);
@@ -70,12 +68,12 @@ function setup() {
 function playA() {
   a.play();
 }
-function voiceE() {
-  voiceFsharp.play();
-}
-function voiceFsharp() {
-  voiceE.play();
-}
+// function voiceE() {
+//   voiceFsharp.play();
+// }
+// function voiceFsharp() {
+//   voiceE.play();
+// }
 function playB() {
   b.play();
 }
